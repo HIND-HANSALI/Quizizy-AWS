@@ -1,0 +1,282 @@
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+@import 'vendors/bootstrap';
+@import 'vendors/jquery';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/navigation';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+
+@import 'components/buttons';
+@import 'components/carousel';
+@import 'components/cover';
+
+@import 'pages/home';
+@import 'pages/contact';
+
+@import 'themes/theme';
+@import 'themes/admin';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap'); 
+
+*{
+    margin:0;
+    padding:O;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+   
+}
+#body-bg{
+    background: #918b90;
+    // background: url(/téléchargementquiz.jfif);
+    background-repeat: no-repeat;
+}
+@mixin centeritems{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// #info_box{
+//     display: none;
+// }
+.info_box{
+    display: none;
+    @include centeritems;
+    // position: absolute;
+    // top:50%;
+    // left: 50%;
+    // transform: translate(-50%,-50%);
+
+    width:540px;
+    background-color: #FFF;
+    border-radius: 5px;
+    
+    .info_title{
+        height: 60px;
+        // width:100%;
+        border-bottom: 1px solid lightgrey;
+        display: flex;
+        align-items: center;
+       padding: 0 35px;
+       font-size: 20px;
+       font-weight: 600;
+    }
+    .info_list{
+        padding: 15px 35px;
+        
+        .info{
+            margin: 5px 0;
+            font-size: 17px;
+
+            span{
+                font-weight: 600;
+                color: #007bff;
+
+            }
+            }
+
+    }
+
+    .buttons{
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 35px;
+        border-top: 1px solid lightgrey;
+
+        .btn{
+            margin: 0 5px;
+            height: 40px;
+        }
+    }
+
+}
+
+.quiz_box{
+    
+   display: none;
+    @include centeritems;
+    width:540px;
+    background-color: #FFF;
+    border-radius: 5px;
+
+    header{
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+
+    .title{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .timer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        width: 145px;
+        height: 45px;
+        background: lightgrey;
+        border: 1px solid whitesmoke;
+        border-radius: 5px;
+        padding: 0 8px;
+    }
+    }
+    section{
+        padding: 25px 30px 20px 30px;
+        background: #fff;
+
+        .que_text{
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .option_list{
+            padding: 15px 0px;
+            // display: block;
+            .option{
+                background: aliceblue;
+                border: 1px solid #84c5fe;
+                border-radius: 5px;
+                padding: 8px 15px;
+                font-size: 17px;
+                margin-bottom: 15px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+
+               
+                    .check{
+                        color: green;
+                        
+                    }
+                    .cross{
+                        color:red;
+                        
+                    }
+
+
+
+               
+
+                &:hover{
+                    color: #004085;
+                    background: #cce5ff;
+                    border: 1px solid #b8daff;
+                &:last-child{
+                    margin-bottom: 0px;
+                }
+
+                
+                }
+                
+            }
+        }
+    }
+    footer{
+        height: 60px;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid lightgrey;
+        .total_que span{
+            display: flex;
+            // user-select: none;
+            p{
+                font-weight: 800;
+                padding: 0 5px;
+            }
+           
+        }
+        .button{
+            height: 40px;
+            padding: 0 13px;
+            font-size: 18px;
+            font-weight: 400;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: 5px;
+            background: #007bff;
+            border: 1px solid #007bff;
+            line-height: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.95);
+            transition: all 0.3s ease;
+
+            &:hover{
+                color: #007bff;
+                background:white ; 
+            }
+
+            
+        }
+        
+    }
+
+}
+.result_box{
+    // display: none;
+    // opacity: 0;
+    @include centeritems;
+    // width:540px;
+    background-color: #FFF;
+    border-radius: 5px;
+    
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    // transform: translate(-50%, -50%) scale(0.9);
+    .icon{
+        font-size: 100px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+    .complete_text{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .score_text span{
+        display: flex;
+        margin: 10px 0;
+        font-size: 18px;
+        font-weight: 500;
+        p{
+            padding: 0 4px;
+            font-weight: 600;
+        }
+    }
+    .buttons{
+        display: flex;
+        // margin: 20px 0;
+         button{
+            margin: 0 10px;
+         }
+    }
+    
+
+}
