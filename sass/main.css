@@ -38,9 +38,14 @@
 
 #body-bg {
   background: url(/Untitled_design.png);
-  background-size: cover;
+  background-size: 100% 100%;
+  background-position: 0% 0%;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+.body-col {
+  color: #004085;
 }
 
 .info_box {
@@ -49,6 +54,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0 4px #ef91e9, 0 0 15px #ef91e9, 0 0 20px #ef91e9, 0 0 30px #ef91e9;
   width: 540px;
   background-color: #FFF;
   border-radius: 5px;
@@ -124,6 +130,13 @@
   border: 1px solid whitesmoke;
   border-radius: 5px;
   padding: 0 8px;
+}
+.quiz_box header .time_line {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: #007bff;
+  height: 3px;
 }
 .quiz_box section {
   padding: 25px 30px 20px 30px;
@@ -238,6 +251,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10rem;
+  flex-wrap: wrap;
 }
 .sides .left-side {
   margin-top: auto;
@@ -252,14 +266,12 @@
   flex-wrap: wrap;
   margin-top: 23px;
 }
-
-.stepper__item {
+.stepper .stepper__item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
-
-.circle {
+.stepper .circle {
   background: #FFF;
   height: 30px;
   width: 70px;
@@ -268,8 +280,7 @@
   border-radius: 50px;
   border: 3px solid whitesmoke;
 }
-
-.circle-acitve {
+.stepper .circle-acitve {
   border-color: green;
 }
 
