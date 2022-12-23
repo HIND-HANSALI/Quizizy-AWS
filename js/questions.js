@@ -14,29 +14,29 @@ let questions = [
   },
     {
     numb: 2,
-    question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
+    question: "Which AWS service would simplify the migration of a database to AWS?",
+    answer: "AWS Database Migration Service (AWS DMS)",
     options: [
-      "Common Style Sheet",
-      "Colorful Style Sheet",
-      "Computer Style Sheet",
-      "Cascading Style Sheet"
+      "AWS Storage Gateway",
+      "AWS Database Migration Service (AWS DMS)",
+      "Amazon EC2",
+      "Amazon AppStream 2.0"
     ]
   },
     {
     numb: 3,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
+    question: "Which AWS offering enables users to find, buy, and immediately start using software solutions in their AWS environment?",
+    answer: "AWS Marketplace",
     options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor"
+      "AWS Config",
+      "AWS OpsWorks",
+      "AWS SDK",
+      "AWS Marketplace"
     ]
   },
     {
     numb: 4,
-    question: "What does SQL stand for?",
+    question: "Which AWS networking service enables a company to create a virtual network within AWS?",
     answer: "Structured Query Language",
     options: [
       "Stylish Question Language",
@@ -47,7 +47,7 @@ let questions = [
   },
     {
     numb: 5,
-    question: "What does XML stand for?",
+    question: "Which of the following is an AWS responsibility under the AWS shared responsibility model?",
     answer: "eXtensible Markup Language",
     options: [
       "eXtensible Markup Language",
