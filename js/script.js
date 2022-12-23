@@ -20,6 +20,8 @@ let result_box = document.querySelector(".result_box");
 let timeCount=document.querySelector(".timer_sec");
 let timeLine=document.querySelector(".time_line");
 
+let time_Pogress=document.querySelector(".time_Pogress");
+
 // if startQuiz button clicked
 
 
@@ -69,14 +71,14 @@ function showQuetions(questions){
     // let option=option_list.querySelectorAll(".option");
 
 
-    // set onclick attribute to all options
+    // // set onclick attribute to all options
     // for(let i=0; i < option.length; i++){
     //     option[i].setAttribute("onclick", "optionSelected(this)");
     // }
 
 
 }
-// if user clicked on option
+// if user clicked an option
 // function optionSelected(answer){
 //     console.log("hiii selected option");
 //     let userAnswer = answer.textContent;
@@ -86,11 +88,14 @@ function showQuetions(questions){
 // }
 
 // fct if next button clicked
+var progress = 0;
 function Next(){
+    progress += 10 ;
     console.log('nexxxt');
     // if(question_count < questions.length - 1){ //if question count is less than total question length
     //increment the question_count value
-   
+    time_Pogress.style.width=progress+"%";
+
     showQuetions(randomQuestions[question_count]); //calling showQestions function
     counterQuestion(question_count+1);//passing numb of question value to counterQuestion
     clearInterval(counter);
@@ -99,14 +104,12 @@ function Next(){
     timerLine(0);
     // clearquestion();
     question_count++;
+    
 
     // }else{
     //     console.log("Questions completed");
     // }
 }
-
-
-
 
 // function clearquestion(){
 
@@ -130,7 +133,7 @@ function timerQuiz(time){
     counter=setInterval(timer,1000);
     function timer(){
         timeCount.textContent= time;
-        time--;
+        // time--;
 
         if(time < 9){ //if timer is less than 9
             let addZero = timeCount.textContent; 
@@ -149,12 +152,14 @@ function timerLine(time){
 
     function timerLinex(){
         
-        time+=1;
-        let timelength = time+"px";
+        //  time+=1;
+         if(time<540){
+            let timelength = time+"px";
         timeLine.style.width=timelength;
-        // console.log("hhh");
-        if (time>549){
-            // console.log("jgj");
+        
+        // time++;
+         }
+        if(time>540){
             clearInterval(counterLine);
         }
     }
