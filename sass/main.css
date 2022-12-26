@@ -44,8 +44,8 @@
   height: 100vh;
 }
 
-#body-col {
-  color: #004085;
+#body-color {
+  color: black;
 }
 
 .info_box {
@@ -217,6 +217,9 @@
 .quiz_box #footer .next_btn:hover {
   color: #007bff;
   background: white;
+}
+.quiz_box #footer .next_bt {
+  display: none;
 }
 
 .result_box {

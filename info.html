@@ -9,7 +9,7 @@
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
-<body id="body-col">
+<body id="body-color">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -50,7 +50,7 @@
       <!-- <p class="c-stepper__desc">Some desc text</p> -->
   </li>
   <li class="stepper__item">
-    <h7 class="circle stepper__title">Step 3</h7>
+    <h7 class="circle stepper__title step-3">Step 3</h7>
     <!-- <p class="c-stepper__desc">Some desc text</p> -->
 </li>
 </ol>
@@ -125,7 +125,7 @@
             <p><strong>2 of 5 </strong> Questions</p>
         </div>
         <div>
-          <button class="btn btn-primary " style="cursor: pointer !important;" onclick="Next()" >Next Que</button>
+          <button class="btn btn-primary next_bt" style="cursor: pointer !important;" onclick="Next()" >Next Que</button>
         </div>
     </footer>
 </div>
@@ -139,17 +139,49 @@
     <div class="score_text">
         <!-- Here I've inserted Score Result from JavaScript -->
         
-        <span>You got only <p>2</p>out of <p>5</p></span>
+        <!-- <span>You got only <p>2</p>out of <p>5</p></span> -->
     </div>
     <div class="buttons">
-        <button class="restart btn btn-primary">Replay Quiz</button>
-        <button class="quit btn btn-outline-primary">Quit Quiz</button>
+        <button class="restart btn btn-primary" onclick="Restart()">Replay Quiz</button>
+        <!-- <button class="quit btn btn-outline-primary">Quit Quiz</button> -->
+        <a href="index.html" class="quit btn btn-outline-primary" >Quit Quiz</a>
+        <!-- <button class="justification btn btn-outline-primary" onclick="justification()">Justification</button> -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="justification()">
+          justification
+        </button>
     </div>
 </div>
+
+
+<!-- modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <!-- js Questions & Options -->
 <script src="js/questions.js"></script>
 <!-- js Quiz codes -->
 <script src="js/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
