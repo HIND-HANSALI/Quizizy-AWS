@@ -37,24 +37,35 @@ let questions = [
     {
     numb: 4,
     question: "Which AWS networking service enables a company to create a virtual network within AWS?",
-    answer: "Structured Query Language",
+    answer: "Amazon Virtual Private Cloud (Amazon VPC)",
     options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
+      "AWS Config",
+      "Amazon Route 53",
+      "AWS Direct Connect",
+      "Amazon Virtual Private Cloud (Amazon VPC)"
     ]
   },
     {
     numb: 5,
     question: "Which of the following is an AWS responsibility under the AWS shared responsibility model?",
-    answer: "eXtensible Markup Language",
+    answer: "Maintaining physical hardware",
     options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
+      "Configuring third-party applications",
+      "Maintaining physical hardware",
+      "Securing application access and data",
+      "Managing guest operating systems"
     ]
   },
+  // {
+  //   numb: 6,
+  //   question: "Which of the following is an AWS responsibility under the AWS shared responsibility model?",
+  //   answer: "Maintaining physical hardware",
+  //   options: [
+  //     "Configuring third-party applications",
+  //     "Maintaining physical hardware",
+  //     "Securing application access and data",
+  //     "Managing guest operating systems"
+  //   ]
+  // },
  
 ];

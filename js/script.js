@@ -68,24 +68,38 @@ function showQuetions(questions){
     // let option_tag = '<div class="option"><span>'+ questions[0].options[0] +'</span></div>'
 
 //    proooob
-    // let option=option_list.querySelectorAll(".option");
+    let option=option_list.querySelectorAll(".option");
 
 
-    // // set onclick attribute to all options
-    // for(let i=0; i < option.length; i++){
-    //     option[i].setAttribute("onclick", "optionSelected(this)");
-    // }
+    // set onclick attribute to all options
+    for(let i=0; i < option.length; i++){
+        option[i].setAttribute("onclick", "optionSelected(this)");
+    }
 
 
 }
 // if user clicked an option
-// function optionSelected(answer){
-//     console.log("hiii selected option");
-//     let userAnswer = answer.textContent;
-//     // let correctAnswer = questions[question_count].answer;//correct answer from array
-//     console.log(userAnswer );
+function optionSelected(answer){
+    // console.log("hiii selected option");
+    let userAnswer = answer.textContent;
+    // console.log(userAnswer );
 
-// }
+    let correctAnswer = questions[question_count].answer;//correct answer from array
+    let allOptions=option_list.children.length;
+    console.log(correctAnswer);
+    // answer.classList.add("correct");
+    if(userAnswer==correctAnswer){
+        answer.classList.add("correct");
+    }else{
+        answer.classList.add("incorrect");
+    }
+    //once user select an option  disabled all options
+    for(i=0; i < allOptions; i++){
+        // option_list.children[i].classList.add("disabled"); 
+    }
+
+
+}
 
 // fct if next button clicked
 var progress = 0;
