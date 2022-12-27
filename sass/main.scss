@@ -33,6 +33,7 @@
     font-family: 'Poppins',sans-serif;
    
 }
+
 .right-side{
     .title-aws{
         color:white;
@@ -322,9 +323,9 @@
 
 }
 .result_box{
-    // display: none;
+    position: relative;
     z-index: -1000;
-   opacity: 0;
+    opacity: 0;
     @include centeritems;
     // width:540px;
     background-color: #FFF;
@@ -332,11 +333,11 @@
     
     display: flex;
     padding: 25px 30px;
-    width: 450px;
+    width: 600px;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    // transform: translate(-50%, -50%) scale(0.9);
+    transform: translateX(-50%);
     .icon{
         font-size: 100px;
         color: #007bff;
@@ -363,7 +364,28 @@
             margin: 0 10px;
          }
     }
-    
+    // .explication{
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-top:0 15px ;
+
+    // }
+    .justify{
+        padding: 5px;
+        margin-bottom: 10px;
+        border:0;
+        border-bottom: 1px solid gray;
+        .justify-question{
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .justify-answer{
+            margin-bottom: 15px;
+
+        }
+
+    }
 
 }
 

@@ -41,7 +41,7 @@ let questions = [
     numb: 4,
     question: "Which AWS networking service enables a company to create a virtual network within AWS?",
     answer: "Amazon Virtual Private Cloud (Amazon VPC)",
-    justification:"",
+    justification:"D – Amazon VPC lets users provision a logically isolated section of the AWS Cloud where users can launch AWS resources in a virtual network that they define.",
     options: [
       "AWS Config",
       "Amazon Route 53",
@@ -53,7 +53,7 @@ let questions = [
     numb: 5,
     question: "Which of the following is an AWS responsibility under the AWS shared responsibility model?",
     answer: "Maintaining physical hardware",
-    justification:"",
+    justification:"B – Maintaining physical hardware is an AWS responsibility under the AWS shared responsibility model.",
     options: [
       "Configuring third-party applications",
       "Maintaining physical hardware",
@@ -65,7 +65,7 @@ let questions = [
     numb: 6,
     question: "Which component of the AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery?",
     answer: "Edge locations",
-    justification:"",
+    justification:"B – To deliver content to users with lower latency, Amazon CloudFront uses a global network of points of presence (edge locations and regional edge caches) worldwide.",
     options: [
       "AWS Regions",
       "Edge locations",
@@ -77,7 +77,7 @@ let questions = [
     numb: 7,
     question: "How would a system administrator add an additional layer of login security to a user's AWS Management Console?",
     answer: "Enable multi-factor authentication",
-    justification:"",
+    justification:" C – Multi-factor authentication (MFA) is a simple best practice that adds an extra layer of protection on top of a username and password. With MFA enabled, when a user signs in to an AWS Management Console, they will be prompted for their username and password (the first factor—what they know), as well as for an authentication code from their MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for AWS account settings and resources.",
     options: [
       "Use Amazon Cloud Directory",
       "Audit AWS Identity and Access Management (IAM) roles",
@@ -87,9 +87,9 @@ let questions = [
   },
   {
     numb: 8,
-    question: "Which service can identify the user that made the API call when an Amazon EC2 instance is terminated?Which service can identify the user that made the API call when an Amazon EC2 instance is terminated?",
+    question: "Which service can identify the user that made the API call when an Amazon EC2 instance is terminated?",
     answer: "AWS CloudTrail",
-    justification:"",
+    justification:"B – AWS CloudTrail helps users enable governance, compliance, and operational and risk auditing of their AWS accounts. Actions taken by a user, role, or an AWS service are recorded as events in CloudTrail. Events include actions taken in the AWS Management Console, AWS Command Line Interface (CLI), and AWS SDKs and APIs.",
     options: [
       "AWS Trusted Advisor",
       "AWS CloudTrail",
@@ -101,7 +101,7 @@ let questions = [
     numb: 9,
     question: "Which service would be used to send alerts based on Amazon CloudWatch alarms?",
     answer: "Amazon Simple Notification Service (Amazon SNS)",
-    justification:"",
+    justification:" A – Amazon SNS and Amazon CloudWatch are integrated so users can collect, view, and analyze metrics for every active SNS. Once users have configured CloudWatch for Amazon SNS, they can gain better insight into the performance of their Amazon SNS topics, push notifications, and SMS deliveries.",
     options: [
       "Amazon Simple Notification Service (Amazon SNS)",
       "AWS CloudTrail",
@@ -113,7 +113,7 @@ let questions = [
     numb: 10,
     question: "Where can a user find information about prohibited actions on the AWS infrastructure?",
     answer: "AWS Acceptable Use Policy",
-    justification:"",
+    justification:"D – The AWS Acceptable Use Policy provides information regarding prohibited actions on the AWS infrastructure",
     options: [
       "AWS Trusted Advisor",
       "Maintaining physical hardware",

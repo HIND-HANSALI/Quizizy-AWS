@@ -24,6 +24,8 @@ let quit_btn=document.querySelector(".quit");
 
 let timeCount = document.querySelector(".timer_sec");
 let timeLine = document.querySelector(".time_line");
+let explication_text=document.querySelector(".explication_text");
+let explication=document.querySelector(".explication");
 
 let time_Pogress = document.querySelector(".time_Pogress");
 
@@ -84,6 +86,7 @@ function showQuetions(questions) {
     
 
 }
+let justify=[];
 let userScore=0;
 // if user clicked an option
 function optionSelected(answer, numb) {
@@ -93,8 +96,8 @@ function optionSelected(answer, numb) {
     questions.forEach(element => {
         // console.log(question_count +"test");
         if (element.numb == numb) {
-            let correctAnswer = element['answer'];//correct answer from array
-            // let allOptions=option_list.children.length;
+            let correctAnswer = element.answer;//correct answer from array
+          
             console.log(correctAnswer);
             if (userAnswer == correctAnswer) {
                 userScore++;
@@ -102,11 +105,22 @@ function optionSelected(answer, numb) {
                 answer.classList.add("correct");
             } else {
                 answer.classList.add("incorrect");
+                let justifyObj=[];
+                justifyObj.push(element.question);
+                justifyObj.push(element.answer);
+                justifyObj.push(element.justification);
+                justify.push(justifyObj);
+                // console.log(justify);
+
+                
+
+                
             }
+            let allOptions=option_list.children.length;
             //once user select an option  disabled all options
-            // for (i = 0; i < allOptions; i++) {
-            //     // option_list.children[i].classList.add("disabled"); 
-            // }
+            for (i = 0; i < allOptions; i++) {
+                option_list.children[i].classList.add("disabled"); 
+            }
             next_btn.style.display="block";
             
         }
@@ -120,6 +134,8 @@ function optionSelected(answer, numb) {
 // fct if next button clicked
 var progress = 0;
 function Next() {
+    document.getElementById("next_btn").style.display=" none";
+    
     clearInterval(counter);
     progress += 10;
     console.log('nexxxt');
@@ -136,7 +152,7 @@ function Next() {
     timerLine(0);
     // clearquestion();
     question_count++;
-    
+
     
 
 
@@ -171,6 +187,7 @@ function showResultBox(){
     result_box.style.opacity="1";
     let score_text=document.querySelector(".score_text");
     // score_text.innerHTML="userScore";
+    
     if(userScore>7){
         let scoreTag='<span>Congrats <p>'+userScore+'</p>out of <p>'+questions.length+'</p></span>';
         score_text.innerHTML=scoreTag;
@@ -183,21 +200,24 @@ function showResultBox(){
         let scoreTag='<span>Sorry,you got only <p>'+userScore+'</p>out of <p>'+questions.length+'</p></span>';
         score_text.innerHTML=scoreTag;
     }
+   
 
 }
 function Restart(){
     result_box.style.display="none";
-    quiz_box.style.display="block";
+    info_box.style.display="block";
+    
 
 }
 // function Justification(){
-
+// let explication_tag='<span>'+ questions.justification+'</span>';
+// explication_text.innerHTML=explication_tag;
 
 // }
 let counter;
 function timerQuiz(time) {
     counter = setInterval(timer, 1000);
-    function timer() {
+    function timer(){
         timeCount.textContent = time;
         time--;
 
@@ -205,8 +225,9 @@ function timerQuiz(time) {
             let addZero = timeCount.textContent;
             timeCount.textContent = "0" + addZero; //add a 0 before time value
         }
-        if (time < 0) {
+        if (time == 0) {
             clearInterval(counter);
+            document.getElementById("next_btn").click();
             timeCount.textContent = "00";
         }
     }
