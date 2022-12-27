@@ -200,7 +200,30 @@ function showResultBox(){
         let scoreTag='<span>Sorry,you got only <p>'+userScore+'</p>out of <p>'+questions.length+'</p></span>';
         score_text.innerHTML=scoreTag;
     }
-   
+    for(let i=0;i<justify.length;i++){
+        let divjustify=document.createElement("div");
+        divjustify.classList.add("justify");
+        explication.appendChild(divjustify);//put child into parent
+        let justifyquestion=document.createElement("h6");
+        justifyquestion.classList.add("justify-question");
+        justifyquestion.innerHTML=justify[i][0];
+
+        divjustify.appendChild(justifyquestion);//put child into parent
+         
+        let justifyanswer=document.createElement("h7");
+        justifyanswer.classList.add("justify-answer");
+        justifyanswer.innerHTML="<b>Correct Answer : </b>"+justify[i][1];
+        divjustify.appendChild(justifyanswer);
+
+
+        let justifyexplication=document.createElement("p");
+        justifyexplication.classList.add("justify-explication");
+        justifyexplication.innerHTML="<b>justification : </b>"+justify[i][2];
+        divjustify.appendChild(justifyexplication);
+    console.log(divjustify);
+
+
+    }
 
 }
 function Restart(){
