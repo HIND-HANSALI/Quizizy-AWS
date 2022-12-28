@@ -250,6 +250,7 @@ function timerQuiz(time) {
         }
         if (time == 0) {
             clearInterval(counter);
+            //when time=0 pass to the next question
             document.getElementById("next_btn").click();
             timeCount.textContent = "00";
         }

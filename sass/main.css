@@ -37,15 +37,11 @@
 }
 
 #body-bg {
-  background: url(/Untitled_design.png);
+  background: url(/assets/img/Untitled_design.png);
   background-size: 100% 100%;
   background-position: 0% 0%;
   background-repeat: no-repeat;
   height: 100vh;
-}
-
-#body-color {
-  color: black;
 }
 
 .info_box {
