@@ -124,3 +124,61 @@ let questions = [
 
  
 ];
+
+// Create an XMLHttpRequest object
+const xhttp = new XMLHttpRequest();
+
+// Define a callback function
+xhttp.onload = function() {
+  // Here you can use the Data
+   
+}
+
+// Send a request
+xhttp.open("GET", "ajax_info.txt");
+xhttp.send();
+
+// /* send data */
+function createData(question, a, b, c, d, correct, explan) {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("good");
+        } else {
+        console.log("Bad");
+        }
+        console.log(xhr.readyState, xhr.status);
+    };
+    xhr.open("POST", "getdata.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(
+    "question=" +
+        question +
+        "&a=" +
+        a +
+        "&b=" +
+        b +
+        "&c=" +
+        c +
+        "&d=" +
+        d +
+        "&correct=" +
+        correct +
+        "&explan=" +
+        explan
+    );
+
+}
+
+let i =0;
+for(i=0;i<quizData.length;i++){
+  createData(
+    quizData[i].question,
+    quizData[i].a,
+    quizData[i].b,
+    quizData[i].c,
+    quizData[i].d,
+    quizData[i].correct,
+    quizData[i].explan
+  );
+}

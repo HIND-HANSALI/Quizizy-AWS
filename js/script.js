@@ -1,5 +1,5 @@
 // stepper JS
-let question_count;
+let question_count=0;
 
 // const stepperItem = document.querySelector(".stepper__item");
 let step2 = document.querySelector(".step-2");
@@ -15,8 +15,6 @@ let next_btn= document.querySelector(".next_bt");
 
 let start_btn = document.querySelector(".start_btn");
 let info_box = document.querySelector(".info_box");
-// const exit_btn = info_box.querySelector(".buttons .quit");
-// const continue_btn = info_box.querySelector(".buttons .continue");
 let quiz_box = document.querySelector(".quiz_box");
 let result_box = document.querySelector(".result_box");
 let restart_btn=document.querySelector(".restart");
@@ -42,18 +40,16 @@ let time_Pogress = document.querySelector(".time_Pogress");
 //     info_box.classList.add("activeInfo");
 // }
 function Continue() {
-    console.log('hhh');
-
     // document.getEleme ntById("myDIV").style.display = "none";
     info_box.style.display = "none";
     quiz_box.style.display = "block";
     randomQuestions = questions.sort(() => Math.random() - .5);
-    question_count = 0;
+    // question_count = 0;
     Next();
-    clearInterval(counter);
+    // clearInterval(counter);
     clearInterval(counterLine);
     counterQuestion(1);
-    timerQuiz(15);
+    // timerQuiz(15);
     timerLine(0);
     step2.classList.add('circle-acitve');
 
@@ -62,8 +58,6 @@ function Continue() {
 
 // getting questions and options from array
 function showQuetions(questions) {
-    // counterQuestion(1);
-
     let question_tag = '<span>' + questions.numb + ". " + questions.question + '</span>';
 
     let option_tag = '<div class="option"><span>' + questions.options[0] + '</span></div>'
@@ -132,8 +126,11 @@ function optionSelected(answer, numb) {
 }
 
 // fct if next button clicked
+
 var progress = 0;
 function Next() {
+    console.log(justify);
+
     document.getElementById("next_btn").style.display=" none";
     
     clearInterval(counter);
@@ -147,29 +144,19 @@ function Next() {
     counterQuestion(question_count + 1);//passing numb of question value to counterQuestion
     clearInterval(counter);
     
-    timerQuiz(15);
+    timerQuiz(15 , question_count);
     clearInterval(counterLine);
     timerLine(0);
     // clearquestion();
     question_count++;
 
     
-
-
     }else{
         console.log("Questions completed");
         showResultBox();
         step3.classList.add('circle-acitve');
     }
 }
-
-// function clearquestion(){
-
-//     while(option.firstChild){
-//         option.removeChild(option.firstChild)
-//     }
-// }
-
 
 function counterQuestion(index) {
     //creating a new span tag and passing the question number and total question
@@ -187,6 +174,8 @@ function showResultBox(){
     result_box.style.opacity="1";
     let score_text=document.querySelector(".score_text");
     // score_text.innerHTML="userScore";
+    
+
     
     if(userScore>7){
         let scoreTag='<span>Congrats <p>'+userScore+'</p>out of <p>'+questions.length+'</p></span>';
@@ -237,8 +226,9 @@ function Restart(){
 // explication_text.innerHTML=explication_tag;
 
 // }
+// index=question_counter
 let counter;
-function timerQuiz(time) {
+function timerQuiz(time , index) {
     counter = setInterval(timer, 1000);
     function timer(){
         timeCount.textContent = time;
@@ -250,12 +240,20 @@ function timerQuiz(time) {
         }
         if (time == 0) {
             clearInterval(counter);
+            // if timer is done answer is incorrect
+            let justifyObj=[];
+            justifyObj.push(questions[index].question);
+            justifyObj.push(questions[index].answer);
+            justifyObj.push(questions[index].justification);
+            justify.push(justifyObj);
             //when time=0 pass to the next question
             document.getElementById("next_btn").click();
             timeCount.textContent = "00";
+
         }
     }
 }
+
 let counterLine;
 function timerLine(time) {
 

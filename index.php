@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quizizy App</title>
-    <link rel="stylesheet" href="../sass/main.css">
+    <link rel="stylesheet" href="main.css">
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> -->
@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
       
-      <a class="navbar-brand" href="#"><img src="/assets/img/aws_logo_smile.png" alt="" height="36"></a>
+      <a class="navbar-brand" href="#"><img src="assets/img/aws_logo_smile.png" alt="" height="36"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,13 +41,13 @@
   <!-- <section id="center-btn"> -->
 <div class="sides">
   <div class="left-side  ">
-    <img src="/assets/img/awsLogo.png" alt="" style="width: 400px ; ">
+    <img src="assets/img/awsLogo.png" alt="" style="width: 400px ; ">
   </div>
   <div class="right-side">
     <h1 class="title-aws">AWS</h1>
     <h3 class="descr-aws">Technical Interview Questions</h3>
     <!-- Start Bouton --> 
-    <a href="info.html" class="start_btn" id="start_btn">Start Quiz</a>
+    <a href="info.php" class="start_btn" id="start_btn">Start Quiz</a>
     
   </div>
 </div>
