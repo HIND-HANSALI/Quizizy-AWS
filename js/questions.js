@@ -142,15 +142,55 @@ xhttp.onreadystatechange = function() {
   // Here you can use the Data
    if(this.readyState ===4 && this.status ===200){
     // console.log("hiiiii");
-    data = JSON.parse(this.responseText);
+    data = JSON.parse(this.responseText)
     console.log(data);
-   
+    for(let i=0;i<data.length;i++){
+       let options=[];
+       options.push(data[i].option1);
+       options.push(data[i].option2);
+       options.push(data[i].option3);
+       options.push(data[i].option4);
+
+
+      // questions.push({question:data[i].question});
+      // questions.push({answer:data[i].answer});
+      // questions.push({justification:data[i].justification});
+      questions.push({numb :data[i].id ,justification:data[i].justification, options:options,answer:data[i].answer,question:data[i].question});
+  
+    }
    }
 }
-// console.log(questions);
+console.log(questions);
 
 // Send a request
 xhttp.open("POST", "http://localhost/quiz-aws-backend/dataAjax.php",true);
 xhttp.send();
 // }
 // getQuestions();
+
+
+
+
+// function getData(){
+//   fetch("http://localhost/quiz-aws-backend/dataAjax.php").then(Response => Response.json()).then((data) =>{
+//   console.log(data);
+//     for(let i=0;i<data.length;i++){
+//        let options=[];
+//        options.push(data[i].option1);
+//        options.push(data[i].option2);
+//        options.push(data[i].option3);
+//        options.push(data[i].option4);
+
+
+//       // questions.push({question:data[i].question});
+//       // questions.push({answer:data[i].answer});
+//       // questions.push({justification:data[i].justification});
+//       questions.push({numb :data[i].id ,justification:data[i].justification, options:options,answer:data[i].answer,question:data[i].question});
+
+//     }  
+// });
+
+  
+// }
+
+// getData();

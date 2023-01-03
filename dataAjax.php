@@ -18,3 +18,22 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //     $data[] = $row;
 // }
        echo json_encode($result);
+
+       // if(isset($_POST['name'])){
+
+       //        $ip = $_SERVER["REMOTE_ADDR"];
+       //        $browser = $_SERVER['HTTP_USER_AGENT'];
+       //        $date =date("m/d/y G.i:s", time());
+              
+       //         $name =@$_POST['name'];
+       //         $score =@$_POST['scor'];
+       //         echo('<hr>');
+       //         print_r($name);
+       //         die();
+       //         $sql="INSERT INTO `users`(`name`, `ip`, `browser`, `score`) VALUES (?,?,?,?)";
+       //         $stmt = $this ->connect() -> prepare($sql);
+       //         $stmt->execute([$name, $ip,$browser,$score]);
+       
+       
+       // }
+      

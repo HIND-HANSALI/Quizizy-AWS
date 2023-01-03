@@ -1,66 +1,21 @@
 <?php
-include_once 'model/database.php'; 
+include_once 'model/database.php';
+$title="Quizizy AWS"; 
+include 'include/head.php';
+
 
 // $conn = new Connection();
 // $conn-> connect();
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Quizizy App</title>
-    <link rel="stylesheet" href="main.css">
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-</head>
+
 <body id="body-color">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      
-      <a class="navbar-brand" href="#"><img src="/assets/img/aws_logo_smile.png" alt="" height="36"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- stepper -->
-  <div class="container">
-    <ol class="stepper">
-      <li class=" stepper__item">
-        <h7 class="circle circle-acitve stepper__title" id="circle-acitve">Step 1</h7>
-        <!-- <p class="c-stepper__desc">Some desc text</p> -->
-      </li>
-        <!-- Other steps -->
-      <li class="stepper__item">
-        <h7 class="circle stepper__title step-2">Step 2</h7>
-        <!-- <p class="c-stepper__desc">Some desc text</p> -->
-      </li>
-      <li class="stepper__item">
-        <h7 class="circle stepper__title step-3">Step 3</h7>
-        <!-- <p class="c-stepper__desc">Some desc text</p> -->
-      </li>
-    </ol>
-  </div>
+ <?php
+ require 'include/navbar.php'; 
+ require 'include/stepper.php'; 
+
+ ?>
+ 
 
   <div class="info_box ">
         <!-- <div class="card col-lg-4 text-center"> -->
@@ -73,9 +28,19 @@ include_once 'model/database.php';
           <p class="info">3-you can't exit from the Quiz while you're playing</p>
           <p class="info">1-you will get points</p>
         </div>
+        <div class="user_name container">
+          <form action="">
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">User Name :</label>
+              <input type="text" class="form-control" id="user-name" placeholder="Enter your Name">
+            </div>
+           </form>
+        </div>
         <div class="buttons">
+          <form action="dataAjax.php" method="POST">
             <a href="index.html" class="btn btn-outline-primary quit">Exit Quizz</a>
-            <button type="button" class="btn btn-primary continue" onclick="Continue()">Continue</button>
+            <button type="button" class="btn btn-primary continue" name="continue" onclick="Continue()">Continue</button>
+            </form>
             <!-- <a href="#" class="btn btn-primary continue" onclick="Continue()">Continue</a> -->
         </div>
   </div>

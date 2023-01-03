@@ -9,7 +9,7 @@ let option = document.querySelector(".option");
 let question_text = document.querySelector(".question_text");
 
 let next_btn= document.querySelector(".next_bt");
-
+let user_name=document.getElementById("user-name");
 
 //getting all required elements
 
@@ -39,6 +39,29 @@ let time_Pogress = document.querySelector(".time_Pogress");
 // continue_btn.onclick = ()=>{
 //     info_box.classList.add("activeInfo");
 // }
+
+
+
+// function createData(name, scor) {
+
+//     alert(name);
+//     console.log("name :"+name + "scor :"+scor);
+//     var xhr = new XMLHttpRequest();
+//     xhr.onload = function () {
+//         if (this.readyState == 4 && this.status == 200) {
+//             console.log(this.responseText);
+//         } else {
+//         console.error();
+//         }
+//         console.log(xhr.readyState, xhr.status);
+//     };
+//     xhr.open("POST", "../script.php");
+//     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//     xhr.send("name=" +name + "&scor="+ scor );
+//   }
+
+
+
 function Continue() {
     // document.getEleme ntById("myDIV").style.display = "none";
     info_box.style.display = "none";
@@ -52,6 +75,7 @@ function Continue() {
     // timerQuiz(15);
     timerLine(0);
     step2.classList.add('circle-acitve');
+    
 
 }
 
@@ -154,6 +178,8 @@ function Next() {
     }else{
         console.log("Questions completed");
         showResultBox();
+        // alert('hind');
+        // createData('hind', 22);
         step3.classList.add('circle-acitve');
     }
 }
@@ -174,7 +200,6 @@ function showResultBox(){
     result_box.style.opacity="1";
     let score_text=document.querySelector(".score_text");
     // score_text.innerHTML="userScore";
-    
 
     
     if(userScore>7){
