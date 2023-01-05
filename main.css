@@ -186,7 +186,7 @@
   border: 1px solid #c3e6cb;
 }
 .quiz_box section .option_list .disabled {
-  pointer-events: none;
+  pointer-events:none;
 }
 .quiz_box #footer {
   display: flex;

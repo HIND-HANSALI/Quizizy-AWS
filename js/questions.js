@@ -138,10 +138,10 @@ const xhttp = new XMLHttpRequest();
 
 let questions=[];
 // Define a callback function
-xhttp.onreadystatechange = function() {
+xhttp.onreadystatechange = function(){
   // Here you can use the Data
    if(this.readyState ===4 && this.status ===200){
-    // console.log("hiiiii");
+    
     data = JSON.parse(this.responseText)
     console.log(data);
     for(let i=0;i<data.length;i++){

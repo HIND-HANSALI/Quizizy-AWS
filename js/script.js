@@ -83,7 +83,6 @@ function Continue() {
 // getting questions and options from array
 function showQuetions(questions) {
     let question_tag = '<span>' + questions.numb + ". " + questions.question + '</span>';
-
     let option_tag = '<div class="option"><span>' + questions.options[0] + '</span></div>'
         + '<div class="option"><span>' + questions.options[1] + '</span></div>'
         + '<div class="option"><span>' + questions.options[2] + '</span></div>'
@@ -124,12 +123,20 @@ function optionSelected(answer, numb) {
             } else {
                 answer.classList.add("incorrect");
                 let justifyObj=[];
+                
                 justifyObj.push(element.question);
                 justifyObj.push(element.answer);
                 justifyObj.push(element.justification);
+                
                 justify.push(justifyObj);
-                // console.log(justify);
 
+                // console.log(justify);
+                // let x= {
+                //     "Qst":lement.question,
+                //     "answer":element.answer,
+                //     "justification":element.justification
+                // }
+                // justify.push(x);
                 
 
                 
@@ -159,7 +166,7 @@ function Next() {
     
     clearInterval(counter);
     progress += 10;
-    console.log('nexxxt');
+    // console.log('nexxxt');
     if(question_count < questions.length ){ //if question count is less than total question length
     //increment the question_count value
     time_Pogress.style.width = progress + "%";
@@ -264,7 +271,7 @@ function timerQuiz(time , index) {
             timeCount.textContent = "0" + addZero; //add a 0 before time value
         }
         if (time == 0) {
-            clearInterval(counter);
+            // clearInterval(counter);
             // if timer is done answer is incorrect
             let justifyObj=[];
             justifyObj.push(questions[index].question);
@@ -298,3 +305,15 @@ function timerLine(time) {
         }
     }
 }
+
+
+// let counterLiine;
+// function timerLine(width){
+//     counterLiine=setInterval(line(),30);
+//     function line(){
+//         width++;
+//        timeLine.style.width=width +"px"; 
+//     }
+
+
+// }
